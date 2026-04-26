@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from '../../../utils/axios'
-import  movieTrailer from 'movie-trailer'
-import YouTube from 'react-youtube';
+import movieTrailer from 'movie-trailer'
 import "./row.css"
-function Row({ title, fetchUrl, isLargeRow })       {
+
+function Row({ title, fetchUrl, isLargeRow, onMovieClick }) {
   const [movies, setMovies] = useState([]);
-  const [trailerUrl, setTrailerUrl] = useState('');
   const base_url = 'https://image.tmdb.org/t/p/original';
+  
   useEffect(() => {
     (async () => {
       try {
@@ -20,29 +20,26 @@ function Row({ title, fetchUrl, isLargeRow })       {
   }, [fetchUrl]);
 
   const handleClick = (movie) => {
-    if (trailerUrl) {
-      setTrailerUrl('');
-    } else {
-      movieTrailer(movie?.title || movie?.name || movie?.original_name)
-        .then((url) => {
-          const urlParams = new URLSearchParams(new URL(url).search);
-          setTrailerUrl(urlParams.get('v'));
-        })
-        .catch((error) => console.log('Trailer not found', error));
-    }
+    movieTrailer(movie?.title || movie?.name || movie?.original_name)
+      .then((url) => {
+        const urlParams = new URLSearchParams(new URL(url).search);
+        const trailerUrl = urlParams.get('v');
+        // Call the global movie click handler
+        onMovieClick(movie, trailerUrl);
+      })
+      .catch((error) => {
+        console.log('Trailer not found', error);
+        // Still call the handler even if no trailer is found
+        onMovieClick(movie, null);
+      });
   };
-  const opts = {
-    height: '390',
-    width: '100%',
-    playerVars:{autoplay: 1 },
-  };
+
   return (
     <div className='row'>
       <h1>{title}</h1>
       <div className='row_posters'>
         {movies.map((movie, index) => (
-          
-     <img
+          <img
             onClick={() => handleClick(movie)}
             key={index}
             src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
@@ -51,12 +48,11 @@ function Row({ title, fetchUrl, isLargeRow })       {
           />
         ))}
       </div>
-      <div style={{ padding: '40px' }}>
-        {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
-      </div>
+      {/* Removed the local video player - now handled globally */}
     </div>
   );
 }
+
 export default Row;
 
 

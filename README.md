@@ -1,70 +1,160 @@
-# Getting Started with Create React App
+# 🎬 Video Streaming Platform (Netflix Clone)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, full-featured video streaming web application inspired by Netflix. Built with React, this project focuses on delivering a clean UI, smooth user experience, and scalable architecture using real-world best practices.
 
-## Available Scripts
 
-In the project directory, you can run:
+## 🌐 Live Demo
 
-### `npm start`
+* Local: [http://localhost:3000](http://localhost:3000)
+* Production: (Add your deployment link here)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##  Overview
 
-### `npm test`
+This project replicates the core experience of a streaming platform like Netflix, including dynamic content browsing, search functionality, and responsive design. It integrates with the TMDB API to fetch real-time movie and TV show data.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##  Key Features
 
-### `npm run build`
+###  User Interface
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Dynamic header with scroll effects
+* Responsive navigation (desktop, tablet, mobile)
+* Hero banner with featured content
+* Smooth animations using Framer Motion
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+###  Content Browsing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Categorized rows (Trending, Top Rated, Originals, etc.)
+* Horizontal scrolling with hover effects
+* Lazy loading for performance optimization
 
-### `npm run eject`
+###  Search Functionality
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Real-time search with debouncing
+* Multi-type search (movies, TV shows, people)
+* Keyboard navigation support
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+###  Video Player
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* YouTube trailer integration
+* Smooth open/close transitions
+* Auto-scroll to active video
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+###  Responsive Design
 
-## Learn More
+* Mobile-first design approach
+* Optimized for all screen sizes
+* Touch and keyboard interactions supported
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##  Tech Stack
 
-### Code Splitting
+### Frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* React 19
+* React Router DOM
+* Styled Components
+* Framer Motion
 
-### Analyzing the Bundle Size
+### API & Data
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* TMDB API
+* Axios
+* React YouTube
 
-### Making a Progressive Web App
+### Tools
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* ESLint
+* Prettier
+* Web Vitals
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+##  Installation
 
-### Deployment
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* Node.js (v16+)
+* TMDB API Key
 
-### `npm run build` fails to minify
+### Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+git clone https://github.com/abdiAlemu01/video-streaming-platform.git
+cd video-streaming-platform
+npm install
+```
+
+Create a `.env` file:
+
+```env
+REACT_APP_API_KEY=your_tmdb_api_key
+```
+
+Run the app:
+
+```bash
+npm start
+```
+
+Open in browser:
+
+```
+http://localhost:3000
+```
+
+---
+
+##  Project Structure
+
+```
+src/
+├── components/
+├── pages/
+├── utils/
+├── assets/
+└── App.js
+```
+
+---
+
+##  API Integration
+
+Data is fetched from TMDB API:
+
+* Trending content
+* Top rated movies
+* TV shows
+* Search results
+
+---
+
+##  Performance
+
+* Lazy loading images and components
+* Debounced search input
+* Optimized rendering with React hooks
+
+---
+
+##  Accessibility
+
+* Keyboard navigation
+* Responsive layout
+* Basic ARIA support
+
+---
+
+##  Contributing
+
+Contributions are welcome.
+
+```bash
+# Fork the repo
+# Create a new branch
+# Submit a pull request
+```
+
+---
+
