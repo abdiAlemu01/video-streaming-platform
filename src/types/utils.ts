@@ -211,13 +211,7 @@ export type SuspenseProps = {
   children: ReactNode;
 };
 
-// Testing utility types
-export type MockFunction<T extends AnyFunction = AnyFunction> = jest.MockedFunction<T>;
-
-export type MockedObject<T> = {
-  [K in keyof T]: T[K] extends AnyFunction ? MockFunction<T[K]> : T[K];
-};
-
+// Testing utility types (Jest types removed for production build compatibility)
 export type TestProps<T = {}> = T & {
   'data-testid'?: string;
 };
