@@ -6,12 +6,9 @@ import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-// Determine basename based on environment
-const basename = process.env.NODE_ENV === 'production' ? '/netflix-stream-video' : '/';
-
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename={basename}>
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>
